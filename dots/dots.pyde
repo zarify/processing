@@ -32,21 +32,19 @@ def calc_offset(from_p, to_p):
 
 def shadow_circle(x, y, r, bw=True):
     """
-    Draw a series of cocentric transparent shadow circles to get the blur effect.
-    Could probably be better achieved by using a blur filter on the right
-    type of processing object.
+    Draw circles at the specified x, y coords, which are offset from the parent
+    circles.
     bw parameter controls whether shadows are drawn in dark grey (True) or
     a soft colour (False).
     """
     # get a nice random colour if not using black and white
     noStroke()
     if not bw:
-        s_col = (uniform(0.3, 0.7)*255, uniform(0.3, 0.7)*255, uniform(0.3, 0.7)*255, 15)
+        s_col = (uniform(0.3, 0.7)*255, uniform(0.3, 0.7)*255, uniform(0.3, 0.7)*255, 50)
     else:
-        s_col = (50, 50, 50, 15)
-    for i in range(int(r),0,-1):
-        fill(*s_col)
-        circle(x, y, i)
+        s_col = (50, 50, 50, 50)
+    fill(*s_col)
+    circle(x, y, r)
 
 def gen_circles(max_size=0, max_circles=0, max_area=0):
     """
@@ -162,6 +160,7 @@ def setup():
         # based on where the bright 'center' point of the image is
         dx, dy = calc_offset((x, y), c)
         shadow_circle(x + max_shadow * dx, y + max_shadow * dy, r, bw=True)
+    filter(BLUR, 2) # fluff up the shadows
     # objects
     for x, y, r in circles:
         noStroke()
