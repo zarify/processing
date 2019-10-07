@@ -1,8 +1,10 @@
 from random import uniform
 from random import choice
 from random import randint
+from random import seed
+from time import time
 
-bg = (50, 50, 50)
+bg = (10, 10, 10)
 
 def pointOnEllipse(ex, ey, ew, eh, px):
     """
@@ -49,19 +51,36 @@ def deform(shp, iterations, variance):
             shp.insert(j, midpoint)
     return shp
 
-def draw_shape(shp, r, g, b, a):
+def draw_shape(shp, r, g, b, a, mode):
     """
     Take a list of vertices (shp) and draw the given shape using the
     supplied (r, g, b, a) colour values.
+    mode can be "lighten", "darken", or "normal" for different blend modes
     """
-    # stroke(r, g, b, a)
-    # strokeWeight(2)
-    noStroke()
-    fill(r, g, b, a)
-    beginShape()
-    for v in shp:
-        vertex(*v)
-    endShape()
+    minx = int(min([p[0] for p in shp]))
+    maxx = int(max([p[0] for p in shp]))
+    miny = int(min([p[1] for p in shp]))
+    maxy = int(max([p[1] for p in shp]))
+    rangex = int(abs(maxx - minx))
+    rangey = int(abs(maxy - miny))
+    
+    s = createGraphics(rangex, rangey)
+    s.beginDraw()
+    s.beginShape()
+    s.fill(r, g, b, a)
+    s.noStroke()
+    for p in shp:
+        s.vertex(p[0] - minx, p[1] - miny)
+    s.endShape()
+    s.filter(BLUR, 2)
+    s.endDraw()
+    
+    if mode == "normal":
+        image(s, minx, miny, rangex, rangey)
+    elif mode == "lighten":
+        blend(s, 0, 0, rangex, rangey, minx, miny, rangex, rangey, DODGE)
+    elif mode == "darken":
+        blend(s, 0, 0, rangex, rangey, minx, miny, rangex, rangey, BURN)
 
 def planet_size(s):
     """
@@ -166,23 +185,28 @@ def draw_nebula(nebs=15, layers=20):
     for j in range(layers):
         for o, c in octs:
             d = deform(o[:], 8, int(random(20,25)))
-            draw_shape(d, c[0], c[1], c[2], uniform(0.01,0.02)*255)
+            draw_shape(d, c[0], c[1], c[2], uniform(0.01,0.02)*255, "normal")
     # draw light-ish spots over the clouds
     for j in range(layers):
         for h, c in spots:
             d = deform(h[:], 6, int(random(20,25)))
-            draw_shape(d, c[0], c[1], c[2], uniform(0.01,0.02)*255)
+            draw_shape(d, c[0], c[1], c[2], uniform(0.01,0.02)*255, "lighten")
     # draw black-ish holes over the clouds
     for j in range(layers):
         for h, c in holes:
             d = deform(h[:], 7, int(random(20,25)))
-            draw_shape(d, c[0], c[1], c[2], uniform(0.01,0.02)*255)
+            draw_shape(d, c[0], c[1], c[2], uniform(0.01,0.02)*255, "darken")
     
 
 def setup():
     size(1500, 1000)
     background(*bg)
-    frameRate(5)
+    
+    rs = 99
+    randomSeed(rs)
+    seed(rs)
+    print("Started")
+    start = time()
     
     gc = lambda: (uniform(0.5, 0.9)*255, uniform(0.5, 0.9)*255, uniform(0.5, 0.9)*255) #random colours
     
@@ -215,5 +239,8 @@ def setup():
     rect(0, 0, 1500, 1000)
     
     print("Done.")
+    print("Time taken:",int(time()-start),"seconds")
+    fn = "solar_system_{}.png".format(rs)
+    save(fn)
 
     
