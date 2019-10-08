@@ -1,8 +1,11 @@
-# processing
+# Processing
 Playing with Processing and Python.
 
 ## Solar System
 Starting to play with generative art. Uses a nice (but super slow) technique for creating the nebula splotches. This was inspired by a couple of Eric Davidson's ([Github](https://github.com/erdavids), [YouTube](https://www.youtube.com/channel/UCUrmX3SvpPerq-KAfGBrgGQ)) examples of [watercolours](https://github.com/erdavids/WatercolorClouds) and [solar system](https://github.com/erdavids/Generative-Space-System).
+
+Originally I just used some overlays of white and black clouds over the basic nebula shapes, but after playing with using PGraphic objects in Processing I switched these to using dodge and burn blending modes instead which gives a much nicer effect, as well as a subtle localised blur on each layer.
+
 ![img](pics/solar_system.png)
 
 ## Dots

@@ -5,6 +5,7 @@ from random import seed
 from time import time
 
 bg = (10, 10, 10)
+w, h = 1500, 1000
 
 def pointOnEllipse(ex, ey, ew, eh, px):
     """
@@ -198,24 +199,41 @@ def draw_nebula(nebs=15, layers=20):
             draw_shape(d, c[0], c[1], c[2], uniform(0.01,0.02)*255, "darken")
     
 
+def draw_stars(n=200, mins=1, maxs=5):
+    sc = lambda: (uniform(0.9, 1.0)*255, uniform(0.9, 1.0)*255, uniform(0.9, 1.0)*255)
+    noStroke()
+    for i in range(n):
+        x, y = random(w), random(h)
+        fill(*sc())
+        circle(x, y, randint(mins,maxs))
+
 def setup():
-    size(1500, 1000)
-    background(*bg)
-    
-    rs = 99
-    randomSeed(rs)
-    seed(rs)
-    print("Started")
-    start = time()
+    size(w, h)
+
+    # start = time()
     
     gc = lambda: (uniform(0.5, 0.9)*255, uniform(0.5, 0.9)*255, uniform(0.5, 0.9)*255) #random colours
     
+    rs = 6
+    
+    localstart = time()
+    background(*bg)
+    randomSeed(rs)
+    seed(rs)
+    print("Started seed "+str(rs))
+    
+    print("\tDrawing stars")
+    draw_stars()
+    
     # gas clouds
+    print("\tDrawing nebula")
     draw_nebula()
     
     # add grain to space
+    print("\tAdding noise")
     add_noise(thresh=80)
     
+    print("\tDrawing planets")
     planets = randint(5,8)
     avg_dist = 1500.0 / planets
     pos = 0
@@ -226,21 +244,25 @@ def setup():
         
         planet(ps, orbit, planet_colour=gc(), rpos=True)
     
+    print("\tAdding more noise")
     add_noise(thresh=80)
     
-    #sun and border
+    # sun and border
+    print("\tDrawing sun")
     sun_colour=gc()
     planet(300, 0, planet_colour=sun_colour)
     
     # border
+    print("\tDrawing border")
     stroke(*sun_colour)
     strokeWeight(50)
     noFill()
     rect(0, 0, 1500, 1000)
     
-    print("Done.")
-    print("Time taken:",int(time()-start),"seconds")
+    print("Done {} time taken {}s".format(rs, int(time()-localstart)))
+    
     fn = "solar_system_{}.png".format(rs)
     save(fn)
+    # print("Time taken: {}s".format(int(time()-start)))
 
     
