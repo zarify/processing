@@ -22,3 +22,7 @@ This is my first attempt at something purely from scratch without trying to repl
 
 Just for fun I thought I'd draw circles inside some of the triangles, which was a good exercise in learning about incircles. Finally, I added some texture to the background in the form of parallel lines of random lengths.
 ![img](pics/tri10.png)
+
+## Deform Experiments
+Investigating different options with playing with the deforming algorithm. Instead of always using octagons, can generate n-sided polygons, and can randomise blending modes and blur values.
+![img](pics/deform_exp.png)
