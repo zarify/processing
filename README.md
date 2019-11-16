@@ -26,3 +26,7 @@ Just for fun I thought I'd draw circles inside some of the triangles, which was 
 ## Deform Experiments
 Investigating different options with playing with the deforming algorithm. Instead of always using octagons, can generate n-sided polygons, and can randomise blending modes and blur values.
 ![img](pics/deform_exp.png)
+
+## Sheep
+My mum bought my eldest daughter a set of pyjamas recently which had a sheep pattern on them. It was simple line drawings, and I figured I'd try and emulate it in Processing. Whilst this isn't perfect (the quadratic curves I used for the feet are a bit gross), and there's some work to do yet (it's fixed scale right now), I think it's looking OK so far.
+![img](pics/sheeps.png)
