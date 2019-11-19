@@ -36,4 +36,4 @@ With an earlier program I was having a go at getting pixel colour values of an i
 
 This program was just getting used to working with this by analysing a loaded JPG or PNG image, breaking it into regions and average colours, and then drawing shapes (started out with squares, then circles) into each region filled with the calculated colour. This looked nice, but not very exciting, so I thought about randomising the shape. I plugged in the deform n-sided polygon class I had written earlier, and used these, with some size variation and multiple layers of transparent shapes, which ended up looking pretty interesting.
 
-![img](pics/carton_enc.mp4)
+![img](pics/carton_enc.gif)
