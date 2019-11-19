@@ -30,3 +30,10 @@ Investigating different options with playing with the deforming algorithm. Inste
 ## Sheep
 My mum bought my eldest daughter a set of pyjamas recently which had a sheep pattern on them. It was simple line drawings, and I figured I'd try and emulate it in Processing. Whilst this isn't perfect (the quadratic curves I used for the feet are a bit gross), and there's some work to do yet (it's fixed scale right now), I think it's looking OK so far.
 ![img](pics/sheeps.png)
+
+## Image Processing with Shapes
+With an earlier program I was having a go at getting pixel colour values of an image. Processing keeps these in a *pixels* array, which is all well and good, but the values stored in the array come across as ints, which you then need to interrogate using red(), green() and blue() functions to isolate the colour values, which is a bit of a pain.
+
+This program was just getting used to working with this by analysing a loaded JPG or PNG image, breaking it into regions and average colours, and then drawing shapes (started out with squares, then circles) into each region filled with the calculated colour. This looked nice, but not very exciting, so I thought about randomising the shape. I plugged in the deform n-sided polygon class I had written earlier, and used these, with some size variation and multiple layers of transparent shapes, which ended up looking pretty interesting.
+
+![img](pics/carton_enc.mp4)
