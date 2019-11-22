@@ -37,3 +37,10 @@ With an earlier program I was having a go at getting pixel colour values of an i
 This program was just getting used to working with this by analysing a loaded JPG or PNG image, breaking it into regions and average colours, and then drawing shapes (started out with squares, then circles) into each region filled with the calculated colour. This looked nice, but not very exciting, so I thought about randomising the shape. I plugged in the deform n-sided polygon class I had written earlier, and used these, with some size variation and multiple layers of transparent shapes, which ended up looking pretty interesting.
 
 ![img](pics/carton_enc.gif)
+
+## Trees
+I know tree generation algorithms have been a Thing forever, but I thought it was a fun exercise in thinking about how I'd do it from scratch. Since I've really liked how the deforming algorithm worked for shapes, I've re-used that for the bushy leaves at the end of branches.
+
+It'd be nice to get some practice drawing curves and make a version of this which was not quite so blocky at the branch joins, with a smoother transition between line lengths.
+
+![img](pics/trees.png)
