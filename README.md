@@ -1,5 +1,5 @@
 # processing
-Playing with Processing and Python.
+Playing with Processing and Python. Most of these are fairly rudimentary experiments, with a couple of more involved pieces that I've done in an attempt to make something I feel suits the idea of "Generative Art".
 
 ## Solar System
 Starting to play with generative art. Uses a nice (but super slow) technique for creating the nebula splotches. This was inspired by a couple of Eric Davidson's ([Github](https://github.com/erdavids), [YouTube](https://www.youtube.com/channel/UCUrmX3SvpPerq-KAfGBrgGQ)) examples of [watercolours](https://github.com/erdavids/WatercolorClouds) and [solar system](https://github.com/erdavids/Generative-Space-System).
@@ -44,3 +44,8 @@ I know tree generation algorithms have been a Thing forever, but I thought it wa
 It'd be nice to get some practice drawing curves and make a version of this which was not quite so blocky at the branch joins, with a smoother transition between line lengths.
 
 ![img](pics/trees.png)
+
+## Worms
+This began as an idea of creating trails of tapering circles to try and get nicely smooth line width transitions, but pivoted into vaguely intestinal trails of paint, following a very basic path variation algorithm (basically choice of 45 degree divergence from current heading). I quite like the look of it, and it might be something to develop more later.
+
+![img](pics/worms.png)
