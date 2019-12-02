@@ -49,3 +49,8 @@ It'd be nice to get some practice drawing curves and make a version of this whic
 This began as an idea of creating trails of tapering circles to try and get nicely smooth line width transitions, but pivoted into vaguely intestinal trails of paint, following a very basic path variation algorithm (basically choice of 45 degree divergence from current heading). I quite like the look of it, and it might be something to develop more later.
 
 ![img](pics/worms.png)
+
+## Ripples
+Experimenting with interaction and z values. Expanding ripples with a few configuration options for how the ripples behave. The z value of the wave influences the colour of the circle lifted, with higher circles being further into HSV colour space. This would be a nice start for a visualiser if I get around to playing with sound at some point.
+
+![img](pics/ripples.gif)
