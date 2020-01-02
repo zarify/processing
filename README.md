@@ -54,3 +54,8 @@ This began as an idea of creating trails of tapering circles to try and get nice
 Experimenting with interaction and z values. Expanding ripples with a few configuration options for how the ripples behave. The z value of the wave influences the colour of the circle lifted, with higher circles being further into HSV colour space. This would be a nice start for a visualiser if I get around to playing with sound at some point.
 
 ![img](pics/ripples.gif)
+
+## Visualising Markov Chain Sentences
+I thought it'd be nice to incorporate some Markov Chain input into one of my Processing visualisations. I've done stuff before with one of my students using Project Gutenberg books, and so that sprang to mind. This program generates a series of sentences based off an analysed book, and then visualises them as a series of co-centric arcs. Each arc segment represents a word in the generated sentence, with the colour, length, and radius being controlled by the sentence length, word rarity, and a score for the word which is the sum of the alpha indices of each of the letters.
+
+![img](pics/markov.png)
