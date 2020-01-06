@@ -59,3 +59,7 @@ Experimenting with interaction and z values. Expanding ripples with a few config
 I thought it'd be nice to incorporate some Markov Chain input into one of my Processing visualisations. I've done stuff before with one of my students using Project Gutenberg books, and so that sprang to mind. This program generates a series of sentences based off an analysed book, and then visualises them as a series of co-centric arcs. Each arc segment represents a word in the generated sentence, with the colour, length, and radius being controlled by the sentence length, word rarity, and a score for the word which is the sum of the alpha indices of each of the letters.
 
 ![img](pics/markov.png)
+
+Here's another take on this using paths instead of arcs. This gives a better idea of how many different options are available in each step of the sentence generation. The colour and line weight aspects didn't turn out that clearly, but I didn't appreciate just how busy some of the junctions would be.
+
+![img](pics/markov_paths.png)
