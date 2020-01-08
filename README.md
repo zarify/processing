@@ -64,6 +64,13 @@ Here's another take on this using paths instead of arcs. This gives a better ide
 
 ![img](pics/markov_paths.png)
 
-And a (hopefully final) version animating each arc and comparing multiple books at the same time. Each arc falls down the Z axis as the animation progresses to keep the scene less busy.
+## Visualise Book Text
+This takes the ideas from the Markov Chain visualisation program but instead progresses through the original text of three books in parallel. The arcs are animated down the Z axis as they are drawn to keep the visuals less busy.
+- Each sentence is given a new hue
+- Each word is scored against its popularity in the Moby Words List and reflected in its colour intensity
+- Each arc's radius is determined by the word length
+- Each arc's length is determined by its popularity within the body of text
+
+It might be interesting to develop this a little bit further and remove stop words before creating the visual.
 
 ![img](pics/visualise.png)
