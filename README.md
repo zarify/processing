@@ -63,3 +63,7 @@ I thought it'd be nice to incorporate some Markov Chain input into one of my Pro
 Here's another take on this using paths instead of arcs. This gives a better idea of how many different options are available in each step of the sentence generation. The colour and line weight aspects didn't turn out that clearly, but I didn't appreciate just how busy some of the junctions would be.
 
 ![img](pics/markov_paths.png)
+
+And a (hopefully final) version animating each arc and comparing multiple books at the same time. Each arc falls down the Z axis as the animation progresses to keep the scene less busy.
+
+![img](pics/visualise.png)
