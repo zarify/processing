@@ -34,6 +34,7 @@ global_score = 0
 book_data = {}
 
 moby_freq = []
+stop_words = []
 
 def setup_book(name, x, y):
     book_data[name] = {
@@ -62,6 +63,14 @@ def loadMoby():
     with open("files/FREQ.TXT") as moby:
         for l in moby:
             moby_freq.append(l.strip("\n \t"))
+
+def loadStopWords():
+    """
+    http://xpo6.com/download-stop-word-list/
+    """
+    with open("files/stop-word-list.txt") as stop:
+        global stop_words
+        stop_words = stop.read().strip().split("\n")
 
 def drawTitle(t):
     """
@@ -112,6 +121,8 @@ def process_book(t):
             for w in l.split():
                 w = w.lower()
                 bare = w.strip(punctuation+" \t0123456789")
+                if bare in stop_words:
+                    continue
                 if not bare.isalpha(): # skip non-words
                     continue
                 wl = len(w)
@@ -216,6 +227,7 @@ def setup():
     background(255)
     
     loadMoby()
+    loadStopWords()
     
     setup_book(book, w/2.0, h/2)
     process_book(book)

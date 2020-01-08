@@ -71,6 +71,6 @@ This takes the ideas from the Markov Chain visualisation program but instead pro
 - Each arc's radius is determined by the word length
 - Each arc's length is determined by its popularity within the body of text
 
-It might be interesting to develop this a little bit further and remove stop words before creating the visual.
+Stop words are ignored at ingestion time to try and make the comparison a little bit more interesting.
 
 ![img](pics/visualise.png)
