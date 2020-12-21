@@ -74,3 +74,8 @@ This takes the ideas from the Markov Chain visualisation program but instead pro
 Stop words are ignored at ingestion time to try and make the comparison a little bit more interesting.
 
 ![img](pics/visualise.png)
+
+## Gutenberg Sentiment
+One of the class activities I did with some students is building a naive sentiment analysis program from scratch. I took this and threw an ebook at it and created a rolling bar graph, picking out random scored words as it goes.
+
+![img](pics/video_zarathustra.mp4)
