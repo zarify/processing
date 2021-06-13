@@ -79,3 +79,18 @@ Stop words are ignored at ingestion time to try and make the comparison a little
 One of the class activities I did with some students is building a naive sentiment analysis program from scratch. I took this and threw an ebook at it and created a rolling bar graph, picking out random scored words as it goes.
 
 ![img](pics/video-zarathustra.gif)
+
+## Shape Grid
+This started out as as a basic exercise to work out a shorter way of creating grids and mixing some other the other little libraries I'd been working on, but it produced some pretty nice results so it turned into its own thing.
+
+![img](pics/shape_grid.png)
+
+## Flowers
+This leverages the library code I wrote to distort polygons, ostensibly for the watercolour technique, but it's turned out to be useful for other things as well, particularly when the random blending mode option is turned on. Check out the subfolder of versions to see some of the variety in the outputs.
+
+![img](pics/flowers.png)
+
+## Constrained Vectors
+I was investigating using masks in Processing and wanted something a little more loose. This Uses a black and white image as a "less of a rule and more of a guideline" mask, where drawing is allowed outside of the mask but it affects how the drawing happens (in this case it reduces stroke weight or circle radius). This example was actually a glitch that turned out pretty nicely so I kept it.
+
+![img](pics/constrained.png)
