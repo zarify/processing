@@ -94,3 +94,7 @@ This leverages the library code I wrote to distort polygons, ostensibly for the 
 I was investigating using masks in Processing and wanted something a little more loose. This Uses a black and white image as a "less of a rule and more of a guideline" mask, where drawing is allowed outside of the mask but it affects how the drawing happens (in this case it reduces stroke weight or circle radius). This example was actually a glitch that turned out pretty nicely so I kept it.
 
 ![img](pics/constrained.png)
+
+## Horror
+This sketch was intended to be a rethink of the nebula I used in Solar System but kept producing frames that looked like eyeless heads. So I kinda ran with it.
+![img](pics/horror.png)
