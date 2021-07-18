@@ -98,3 +98,7 @@ I was investigating using masks in Processing and wanted something a little more
 ## Horror
 This sketch was intended to be a rethink of the nebula I used in Solar System but kept producing frames that looked like eyeless heads. So I kinda ran with it.
 ![img](pics/horror.png)
+
+## Irregular Orbits
+Working with 3D contexts, this was originally intended to shift perspectives of an array of spheres as the image (or camera) rotated, but pivoted to painting in shapes using the rotation of orbiting spheres.
+![img](pics/irregular_orbits.png)
